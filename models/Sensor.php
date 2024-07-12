@@ -9,9 +9,7 @@ class Sensor extends \ActiveRecord\Model
         array('greenhouse_id')
     );
 
-    static $belongs_to = array(
-        array('greenhouse'),
-        array('reading'),
+    static $has_many = array(
+        array('reading')
     );
-
 }

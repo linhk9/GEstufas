@@ -8,7 +8,8 @@ class SensorController extends Controller
     public function index()
     {
         $sensors = Sensor::all();
-        $this->renderView('sensor', 'index', ['sensors' => $sensors]);
+        $greenhouses = Greenhouse::all();
+        $this->renderView('sensor', 'index', ['sensors' => $sensors,'greenhouses' => $greenhouses]);
     }
 
     public function create()
@@ -20,14 +21,27 @@ class SensorController extends Controller
 
     public function store()
     {
-
         $sensors = new Sensor($this-> getHTTPPost());
+        $sensors->tempmedia = 0;
         if($sensors->is_valid()){
             $sensors->save();
-
             $this -> redirectToRoute('sensor','index');
         } else {
             $this -> redirectToRoute('sensor','create');
         }
     }
+
+    public function delete($id)
+    {
+        $sensors = Sensor::find($_GET['id']);
+        $sensors->delete();
+        $this->redirectToRoute('sensor', 'index');
+    }
+
+    public function show($id)
+    {
+        $sensors = Sensor::find($id);
+        $this->renderView('sensor', 'show', ['sensors' => $sensors]);
+    }
+
 }

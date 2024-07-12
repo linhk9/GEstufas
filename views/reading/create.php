@@ -5,7 +5,7 @@
     </div>
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Sensor</label>
-        <select name="sensor_id"> <?php foreach ($sensors as $sensor) { ?>
+        <select name="sensors_id"> <?php foreach ($sensors as $sensor) { ?>
                 <option value="<?= $sensor->id ?>"><?= $sensor->designacao; ?></option> <?php } ?>
         </select><br>
     </div>

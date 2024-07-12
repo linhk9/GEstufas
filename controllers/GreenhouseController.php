@@ -15,6 +15,24 @@ class GreenhouseController extends Controller
         $this->renderView('greenhouse', 'create');
     }
 
+    public function edit($id)
+    {
+        $greenhouses = Greenhouse::find($id);
+        $this->renderView('greenhouse', 'edit',['greenhouses'=>$greenhouses]);
+    }
+
+    public function update($id)
+    {
+        $greenhouse = Greenhouse::find($id);
+        $greenhouse->update_attributes($this->getHTTPPost());
+        if($greenhouse->is_valid()){
+            $greenhouse->save();
+            $this -> redirectToRoute('greenhouse','index');
+        } else {
+            $this -> redirectToRoute('greenhouse','edit',$id);
+        }
+    }
+
     public function store()
     {
         $greenhouse = new Greenhouse($this-> getHTTPPost());

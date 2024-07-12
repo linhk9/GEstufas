@@ -17,9 +17,9 @@
                     <td><?= $reading->sensors_id ?></td>
                     <td><?= $reading->periods_id ?></td>
                     <td>
-                        <a href="index.php?c=sensor&a=show&id=<?= $reading->id ?>" class="btn btn-info"
+                        <a href="index.php?c=reading&a=show&id=<?= $reading->id ?>" class="btn btn-info"
                            role="button">Show</a>
-                        <a href="index.php?c=sensor&a=delete&id=<?= $reading->id ?>" class="btn btn-warning"
+                        <a href="index.php?c=reading&a=delete&id=<?= $reading->id ?>" class="btn btn-warning"
                            role="button">Delete</a>
                     </td>
                 </tr>

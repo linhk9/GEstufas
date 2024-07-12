@@ -8,6 +8,8 @@ class ReadingController extends Controller
     public function index()
     {
         $readings = Reading::all();
+        $periods = Period::all();
+        $sensors = Sensor::all();
         $this->renderView('reading', 'index', ['readings' => $readings]);
     }
 

@@ -18,6 +18,8 @@
                     <td>
                         <a href="index.php?c=greenhouse&a=show&id=<?= $greenhouse->id ?>" class="btn btn-info"
                            role="button">Show</a>
+                        <a href="index.php?c=greenhouse&a=edit&id=<?= $greenhouse->id ?>" class="btn btn-info"
+                           role="button">Editar</a>
                         <a href="index.php?c=greenhouse&a=delete&id=<?= $greenhouse->id ?>" class="btn btn-warning"
                            role="button">Delete</a>
                     </td>

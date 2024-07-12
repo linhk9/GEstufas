@@ -10,7 +10,8 @@ class Reading extends \ActiveRecord\Model
     );
 
     static $has_many = array(
-        array('sensor')
+        array('sensor'),
+        array('period')
     );
 
 }

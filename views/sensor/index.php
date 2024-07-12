@@ -6,8 +6,9 @@
             <thead>
             <th><h3>Id</h3></th>
             <th><h3>numserie</h3></th>
-            <th><h3>designacao</h3></th>
-            <th><h3>tempmedia</h3></th>
+            <th><h3>Designação</h3></th>
+            <th><h3>Estufa</h3></th>
+            <th><h3>Temperatura Media</h3></th>
             <th><h3>User Actions</h3></th>
             </thead>
             <tbody>
@@ -16,6 +17,7 @@
                     <td><?= $sensor->id ?></td>
                     <td><?= $sensor->numserie ?></td>
                     <td><?= $sensor->designacao ?></td>
+                    <td><?= $sensor->greenhouse_id?></td>
                     <td><?= $sensor->tempmedia ?></td>
                     <td>
                         <a href="index.php?c=sensor&a=show&id=<?= $sensor->id ?>" class="btn btn-info"

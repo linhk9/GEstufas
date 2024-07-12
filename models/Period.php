@@ -7,4 +7,8 @@ class Period extends \ActiveRecord\Model
         array('designacao')
     );
 
+    static $has_many = array(
+        array('reading')
+    );
+
 }
