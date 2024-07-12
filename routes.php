@@ -24,6 +24,8 @@ require_once 'controllers/ReadingController.php';
             'store' => ['POST', 'SensorController', 'store'],
             'delete' => ['GET', 'SensorController', 'delete'],
             'show' => ['GET', 'SensorController', 'show'],
+            'edit' => ['GET', 'SensorController', 'edit'],
+            'update' => ['POST', 'SensorController', 'update'],
         ],
         'reading' => [
             'index' => ['GET', 'ReadingController', 'index'],

@@ -5,10 +5,12 @@ require_once 'models/Sensor.php';
 
 class SensorController extends Controller
 {
+    
     public function index()
     {
         $sensors = Sensor::all();
         $greenhouses = Greenhouse::all();
+
         $this->renderView('sensor', 'index', ['sensors' => $sensors,'greenhouses' => $greenhouses]);
     }
 
@@ -43,5 +45,25 @@ class SensorController extends Controller
         $sensors = Sensor::find($id);
         $this->renderView('sensor', 'show', ['sensors' => $sensors]);
     }
+
+    public function edit($id)
+    {
+        $sensors = Sensor::find($id);
+        $greenhouses = Greenhouse::all();
+        $this->renderView('sensor', 'edit', ['sensors' => $sensors, 'greenhouses' => $greenhouses]);
+    }
+
+    public function update($id)
+    {
+        $sensors = Sensor::find($id);
+        $sensors->update_attributes($this->getHTTPPost());
+        if($sensors->is_valid()){
+            $sensors->save();
+            $this->redirectToRoute('sensor', 'index');
+        } else {
+            $this->redirectToRoute('sensor', 'edit');
+        }
+    }
+
 
 }

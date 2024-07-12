@@ -22,6 +22,8 @@
                     <td>
                         <a href="index.php?c=sensor&a=show&id=<?= $sensor->id ?>" class="btn btn-info"
                            role="button">Show</a>
+                        <a href="index.php?c=sensor&a=edit&id=<?= $sensor->id ?>" class="btn btn-info"
+                           role="button">Editar</a>
                         <a href="index.php?c=sensor&a=delete&id=<?= $sensor->id ?>" class="btn btn-warning"
                            role="button">Delete</a>
                     </td>
